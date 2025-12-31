@@ -1,0 +1,74 @@
+{
+  "mitglieder": [
+    {
+      "name": "Phillip Pridgar",
+      "role": "Präsident",
+      "img": "/bilder/mitglieder/0c13d49a-1d11-4c09-a27e-fef787fbec99.jpg"
+    },
+    {
+      "name": "Sandro Lang",
+      "role": "Finanzchef",
+      "img": "/bilder/mitglieder/0c13d49a-1d11-4c09-a27e-fef787fbec94.jpg"
+    },
+    {
+      "name": "Martin Frei",
+      "role": "Vizepräsident",
+      "img": "/bilder/mitglieder/hintergrund.jpg"
+    },
+    {
+      "name": "Remo Zäch",
+      "role": "Aktuar",
+      "img": "/bilder/mitglieder/hintergrund.jpg"
+    },
+    {
+      "name": "Marcel Ammann",
+      "role": "Beisitzer/Bau",
+      "img": "/bilder/mitglieder/0c13d49a-1d11-4c09-a27e-fef787fbec93.jpg"
+    },
+    {
+      "name": "Remo Gmür",
+      "role": "Hüttenwart ",
+      "img": "/bilder/mitglieder/0c13d49a-1d11-4c09-a27e-fef787fbec95.jpg"
+    },
+    {
+      "name": "Marcel Tanner",
+      "role": "Revisor",
+      "img": "/bilder/mitglieder/0c13d49a-1d11-4c09-a27e-fef787fbec96.jpg"
+    },
+    {
+      "name": "Janick Schlegel",
+      "role": "Revisor",
+      "img": "/bilder/mitglieder/0c13d49a-1d11-4c09-a27e-fef787fbec97.jpg"
+    },
+    {
+      "name": "Patrick Neurohr",
+      "role": "Tourmanager",
+      "img": "/bilder/mitglieder/0c13d49a-1d11-4c09-a27e-fef787fbec98.jpg"
+    },
+    {
+      "name": "Nando Schlegel",
+      "role": "Homepage",
+      "img": "/bilder/mitglieder/hintergrund.jpg"
+    },
+    {
+      "name": "Sepp Geisser",
+      "role": "Koch",
+      "img": "/bilder/mitglieder/0c13d49a-1d11-4c09-a27e-fef787fbec92.jpg"
+    },
+    {
+      "name": "Dominik Sieber",
+      "role": "",
+      "img": "/bilder/mitglieder/hintergrund.jpg"
+    },
+    {
+      "name": "Marcel Segmüller",
+      "role": "",
+      "img": "/bilder/mitglieder/hintergrund.jpg"
+    },
+    {
+      "name": "Hitsch",
+      "role": "",
+      "img": "/bilder/mitglieder/hintergrund.jpg"
+    }
+  ]
+}
