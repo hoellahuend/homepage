@@ -15,6 +15,7 @@ export default function Verein() {
   } = mottoData;
   const [isOpen, setIsOpen] = useState(false);
   const { mitglieder } = mitgliederData;
+  const getImgUrl = (path) => `${import.meta.env.BASE_URL}${path}`;
 
   return (
     <div className="relative w-full -top-4">
@@ -33,7 +34,8 @@ export default function Verein() {
             >
               <div className="w-full aspect-[4/3]">
                 <img
-                  src={mitglied.img}
+                  // Hier wird die Basis-URL (z.B. /homepage/) vor den Pfad aus dem JSON gesetzt
+                  src={getImgUrl(mitglied.img)}
                   alt={mitglied.name}
                   className="w-full h-full object-cover"
                 />
