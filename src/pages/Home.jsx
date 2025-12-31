@@ -124,7 +124,7 @@ export default function Home() {
 
         <div className="clearfix">
           <img
-            src="/src/assets/bilder/Burg.jpg"
+            src="../assets/bilder/Burg.jpg"
             alt="Unsere Burg"
             className="float-right w-1/2 sm:w-1/2 mr-6 mb-4 rounded-lg shadow-lg"
           />
