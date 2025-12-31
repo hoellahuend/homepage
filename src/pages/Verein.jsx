@@ -100,7 +100,7 @@ export default function Verein() {
         </p>
         {aktuellesMotto.image && (
           <img
-            src={aktuellesMotto.image}
+            src={getImgUrl(aktuellesMotto.image)}
             alt={aktuellesMotto.title}
             className="rounded-lg shadow-lg mb-6 w-full"
           />
@@ -129,7 +129,7 @@ export default function Verein() {
         </div>
         {schollenKrieger.image && (
           <img
-            src={schollenKrieger.image}
+            src={getImgUrl(schollenKrieger.image)}
             alt={schollenKrieger.title}
             className="rounded-lg shadow-lg mb-6 mt-6 w-full"
           />
@@ -154,7 +154,7 @@ export default function Verein() {
         </p>
         {hunde.image && (
           <img
-            src={hunde.image}
+            src={getImgUrl(hunde.image)}
             alt={hunde.title}
             className="rounded-lg shadow-lg mb-6 mt-6 w-full"
           />
@@ -165,7 +165,7 @@ export default function Verein() {
         </p>
         {jaeger.image && (
           <img
-            src={jaeger.image}
+            src={getImgUrl(jaeger.image)}
             alt={jaeger.title}
             className="rounded-lg shadow-lg mb-6 mt-6 w-full"
           />
@@ -176,7 +176,7 @@ export default function Verein() {
         </p>
         {untoten.image && (
           <img
-            src={untoten.image}
+            src={getImgUrl(untoten.image)}
             alt={untoten.title}
             className="rounded-lg shadow-lg mb-6 mt-6 w-full"
           />
@@ -187,7 +187,7 @@ export default function Verein() {
         </p>
         {raubritter.image && (
           <img
-            src={raubritter.image}
+            src={getImgUrl(raubritter.image)}
             alt={raubritter.title}
             className="rounded-lg shadow-lg mb-6 mt-6 w-full"
           />
@@ -198,7 +198,7 @@ export default function Verein() {
         </p>
         {sumpfschratten.image && (
           <img
-            src={sumpfschratten.image}
+            src={getImgUrl(sumpfschratten.image)}
             alt={sumpfschratten.title}
             className="rounded-lg shadow-lg mb-6 mt-6 w-full"
           />
@@ -209,7 +209,7 @@ export default function Verein() {
         </p>
         {hundeAlt.image && (
           <img
-            src={hundeAlt.image}
+            src={getImgUrl(hundeAlt.image)}
             alt={hundeAlt.title}
             className="rounded-lg shadow-lg mb-6 mt-6 w-full"
           />

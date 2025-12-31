@@ -8,43 +8,43 @@
   "schollenKrieger": {
     "title": "Schollenkrieger",
     "text": "Vor langer langer Zeit wurde die Welt von dunklen Mächten bewohnt. Es herrschte Anarchie. Im Rheintal war es besonders schlimm, so trafen sich immer wieder riesige Heere, um mächtige Schlachten zu schlagen.\n \n Es gab verschiedene Stämme, die sich gegenseitig bekriegten.\n \n So der Stamm der Baummenschen. Sie lebten weit im Westen und wurden durch eine Naturkatastrophe zur Flucht aus ihrem Gebiet gezwungen.\n \n Dann waren da die Söldner der Dunkelheit. Die letzte grosse Schlacht um die Herrschaft der Mitte der Welt, das Rheintal, war geschlagen und sie irrten in kleinen Gruppen umher.\n \n Und schliesslich gab es noch die Kreaturen. Halb Getier und halb Mensch. Sie waren grausam, herzlos und hässlich noch dazu.\n \n Ganz selten waren die Gargoyles und Einäugigen. Man konnte sie am ehesten mit Trollen vergleichen. Trotz ihres Aussehens hatten sie einen gewissen Schalk im Herzen.\n \n Während Jahrtausenden ruhten sie im Moor. Im Mittelalter begann der Mensch hier im Schollariet Torf zu stechen. Dabei wurden die versunkenen Krieger in ihrer Totenruhe gestört. Sie erhoben sich aus dem Schollariet und verbreiten seither Angst und Schrecken.\n \n Vor allem während der Fasnachtszeit sind sie besonders aktiv…",
-    "image": "/bilder/mottos/schollenkrieger.jpg",
+    "image": "bilder/mottos/schollenkrieger.jpg",
     "video": "/videos/Schollenkrieger_Final.mp4"
   },
   "hunde": {
     "title": "Höllen Hunde",
     "text": "",
-    "image": "/bilder/mottos/hunde.jpg",
+    "image": "bilder/mottos/hunde.jpg",
     "video": ""
   },
   "jaeger": {
     "title": "Mualtahee, die Jäger",
     "text": "",
-    "image": "/bilder/mottos/jaeger.jpg",
+    "image": "bilder/mottos/jaeger.jpg",
     "video": ""
   },
   "untoten": {
     "title": "Die Untoten",
     "text": "",
-    "image": "/bilder/mottos/untoten.jpg",
+    "image": "bilder/mottos/untoten.jpg",
     "video": ""
   },
   "raubritter": {
     "title": "Die rostigen Raubritter",
     "text": "",
-    "image": "/bilder/mottos/raubritter.jpg",
+    "image": "bilder/mottos/raubritter.jpg",
     "video": ""
   },
   "sumpfschratten": {
     "title": "Sumpfschratten",
     "text": "",
-    "image": "/bilder/mottos/sumpfschratten.jpg",
+    "image": "bilder/mottos/sumpfschratten.jpg",
     "video": ""
   },
   "hundeAlt": {
     "title": "Höllen Hunde",
     "text": "",
-    "image": "/bilder/mottos/hundeAlt.jpg",
+    "image": "bilder/mottos/hundeAlt.jpg",
     "video": ""
   }
 }
