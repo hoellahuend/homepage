@@ -124,9 +124,9 @@ export default function Home() {
 
         <div className="clearfix">
           <img
-            src="../assets/bilder/Burg.jpg"
+            src={new URL("../assets/bilder/Burg.jpg", import.meta.url).href}
             alt="Unsere Burg"
-            className="float-right w-1/2 sm:w-1/2 mr-6 mb-4 rounded-lg shadow-lg"
+            className="float-right w-1/2 sm:w-1/2 ml-6 mb-4 rounded-lg shadow-lg"
           />
 
           <p className="text-ter font-tefont text-lg sm:text-xl md:text-3xl">
