@@ -2,11 +2,17 @@ import { useNavigate } from "react-router-dom";
 import ZaehneUnten from "../assets/bilder/ZaehneUnten.png";
 import ZaehneGross from "../assets/bilder/ZaehneUntenGross.png";
 
-export default function Footer({ animating, onNavigate, menuOpen }) {
+export default function Footer({
+  animating,
+  menuOpen,
+  setMenuOpen,
+  setAnimating,
+}) {
   const navigate = useNavigate();
 
-  const handleClick = (page) => {
-    onNavigate(page);
+  const handleClick = (page, path) => {
+    onNavigate(page); // Animation bleibt
+    navigate(path); // URL wird geändert
   };
 
   return (
@@ -19,7 +25,7 @@ export default function Footer({ animating, onNavigate, menuOpen }) {
 
       {/* Footer Zähne Desktop */}
       <div
-        className="absolute left-0 w-full hidden md:flex z-40"
+        className="absolute left-0 w-full hidden md:flex z-20"
         style={{ height: "200px", overflow: "visible" }}
       >
         <img
@@ -54,8 +60,12 @@ export default function Footer({ animating, onNavigate, menuOpen }) {
         {/* Mobile Footer Content */}
         {menuOpen && (
           <div className="md:hidden fixed bottom-0 left-0 w-full bg-qui text-qua flex flex-col items-center justify-center py-4 gap-2 z-50">
+            {/* Mobile */}
             <button
-              onClick={() => onNavigate("datenschutz")}
+              onClick={() => {
+                navigate("/datenschutz");
+                setMenuOpen(false); // Menü schließen auf Mobile
+              }}
               className="hover:text-sec transition-opacity"
             >
               Datenschutzerklärung
@@ -86,7 +96,10 @@ export default function Footer({ animating, onNavigate, menuOpen }) {
         {/* Desktop Footer Content */}
         <div className="hidden md:flex w-full px-6 pb-4 flex-row items-start justify-between gap-4">
           <button
-            onClick={() => handleClick("datenschutz", "/datenschutz")}
+            onClick={() => {
+              navigate("/datenschutz");
+              setMenuOpen(false); // Menü schließen auf Mobile
+            }}
             className="opacity-80 hover:text-sec transition-opacity"
           >
             Datenschutzerklärung
