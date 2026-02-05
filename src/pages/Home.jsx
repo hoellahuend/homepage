@@ -39,22 +39,44 @@ export default function Home() {
           alt="Flyer für die Bar am Fasnachtssamstag"
         />
       </div>
-      {/* Unser Motto*/}
+      {/* Aktuelles Motto */}
       <div className="w-full sm:w-4/5 md:w-3/5 mx-auto py-12 px-8">
+        {/* Überschrift */}
         <p className="text-center text-sec font-tifont text-3xl sm:text-4xl md:text-6xl">
           Unser aktuelles Motto
         </p>
+
+        {/* Titel */}
         <p className="text-center text-ter font-tefont font-bold text-xl sm:text-2xl md:text-5xl p-4 sm:p-6 md:pb-4">
           {aktuellesMotto.title}
         </p>
 
+        {/* Text */}
         <div className="text-center text-ter font-tefont text-lg sm:text-xl md:text-3xl p-4 sm:p-6 md:p-8 whitespace-pre-line">
           {aktuellesMotto.text}
         </div>
+
+        {/* Bild */}
+        {aktuellesMotto.image && (
+          <div className="flex justify-center mt-6">
+            <img
+              src={getImgUrl(aktuellesMotto.image)}
+              alt={aktuellesMotto.title}
+              className="rounded-lg shadow-lg max-w-full w-auto"
+            />
+          </div>
+        )}
+
+        {/* Video */}
         {aktuellesMotto.video && (
-          <video controls className="w-full rounded-lg shadow-lg pt-8">
-            <source src={aktuellesMotto.video} type="video/mp4" />
-          </video>
+          <div className="flex justify-center mt-6">
+            <video
+              controls
+              className="w-full max-w-md h-auto rounded-lg shadow-lg"
+            >
+              <source src={aktuellesMotto.video} type="video/mp4" />
+            </video>
+          </div>
         )}
       </div>
 

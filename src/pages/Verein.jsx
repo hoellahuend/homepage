@@ -89,9 +89,12 @@ export default function Verein() {
 
       {/* Unser Aktuelles Motto */}
       <div className="w-full sm:w-4/5 md:w-3/5 mx-auto py-12 px-8">
+        {/* Überschrift */}
         <p className="text-center text-sec font-tifont text-3xl sm:text-4xl md:text-6xl">
           Unser aktuelles Motto
         </p>
+
+        {/* Titel */}
         <p className="text-center text-ter font-tefont font-bold text-xl sm:text-2xl md:text-5xl p-4 sm:p-6 md:pb-4">
           {aktuellesMotto.title}
         </p>
@@ -101,18 +104,27 @@ export default function Verein() {
           {aktuellesMotto.text}
         </div>
 
+        {/* Bild */}
         {aktuellesMotto.image && (
-          <img
-            src={getImgUrl(aktuellesMotto.image)}
-            alt={aktuellesMotto.title}
-            className="rounded-lg shadow-lg mb-6 w-full"
-          />
+          <div className="flex justify-center mt-6">
+            <img
+              src={getImgUrl(aktuellesMotto.image)}
+              alt={aktuellesMotto.title}
+              className="rounded-lg shadow-lg max-w-full w-auto"
+            />
+          </div>
         )}
 
+        {/* Video */}
         {aktuellesMotto.video && (
-          <video controls className="w-full rounded-lg shadow-lg">
-            <source src={aktuellesMotto.video} type="video/mp4" />
-          </video>
+          <div className="flex justify-center mt-6">
+            <video
+              controls
+              className="w-full max-w-md h-auto rounded-lg shadow-lg"
+            >
+              <source src={aktuellesMotto.video} type="video/mp4" />
+            </video>
+          </div>
         )}
       </div>
 
