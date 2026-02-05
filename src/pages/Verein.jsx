@@ -87,7 +87,7 @@ export default function Verein() {
         </div>
       </div>
 
-      {/* Unser Aktuelles Motto*/}
+      {/* Unser Aktuelles Motto */}
       <div className="w-full sm:w-4/5 md:w-3/5 mx-auto py-12 px-8">
         <p className="text-center text-sec font-tifont text-3xl sm:text-4xl md:text-6xl">
           Unser aktuelles Motto
@@ -95,9 +95,12 @@ export default function Verein() {
         <p className="text-center text-ter font-tefont font-bold text-xl sm:text-2xl md:text-5xl p-4 sm:p-6 md:pb-4">
           {aktuellesMotto.title}
         </p>
-        <p className="text-center text-ter font-tefont text-lg sm:text-xl md:text-3xl p-4 sm:p-6 md:p-8">
+
+        {/* Text mit Zeilenumbrüchen */}
+        <div className="text-center text-ter font-tefont text-lg sm:text-xl md:text-3xl p-4 sm:p-6 md:p-8 whitespace-pre-line">
           {aktuellesMotto.text}
-        </p>
+        </div>
+
         {aktuellesMotto.image && (
           <img
             src={getImgUrl(aktuellesMotto.image)}

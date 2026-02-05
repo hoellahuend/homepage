@@ -33,7 +33,7 @@ export default function Home() {
           src={
             new URL(
               "../assets/bilder/Fasnachts-treff-flyer.jpg",
-              import.meta.url
+              import.meta.url,
             ).href
           }
           alt="Flyer für die Bar am Fasnachtssamstag"
@@ -48,9 +48,9 @@ export default function Home() {
           {aktuellesMotto.title}
         </p>
 
-        <p className="text-center text-ter font-tefont text-lg sm:text-xl md:text-3xl p-4 sm:p-6 md:p-8">
+        <div className="text-center text-ter font-tefont text-lg sm:text-xl md:text-3xl p-4 sm:p-6 md:p-8 whitespace-pre-line">
           {aktuellesMotto.text}
-        </p>
+        </div>
         {aktuellesMotto.video && (
           <video controls className="w-full rounded-lg shadow-lg pt-8">
             <source src={aktuellesMotto.video} type="video/mp4" />
