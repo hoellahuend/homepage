@@ -1,13 +1,13 @@
 export default function Termine({ onNavigate }) {
   const events = [
-    { date: "23.01.2026", description: "Hexanacht Böcklesberger Hexa" },
-    { date: "01.02.2026", description: "Umzug Rheineck" },
-    { date: "07.02.2026", description: "Umzug Vaduz" },
-    { date: "08.02.2026", description: "Umzug Feldkirch" },
-    { date: "14.02.2026", description: "Umzug Oberriet" },
-    { date: "15.02.2026", description: "Umzug Kriessern/Altstätten" },
-    { date: "16.02.2026", description: "Umzug Mauren" },
-    { date: "21.02.2026", description: "Umzug Trübbach" },
+    { date: "23.01.2027", description: "Hexanacht Böcklesberger Hexa" },
+    { date: "23.01.2027", description: "Umzug Weinfelden" },
+    { date: "30.01.2027", description: "Umzug Rebstein" },
+    { date: "31.01.2027", description: "Umzug Feldkirch" },
+    { date: "06.02.2027", description: "Umzug Oberriet" },
+    { date: "07.02.2027", description: "Umzug St.Gallen" },
+    { date: "08.02.2027", description: "Umzug Mauren" },
+    { date: "13.02.2027", description: "Umzug Trübbach" },
   ];
 
   // Heutiges Datum als String im gleichen Format wie die Termine
@@ -25,7 +25,7 @@ export default function Termine({ onNavigate }) {
           src={
             new URL(
               "../assets/bilder/Fasnachts-treff-flyer.jpg",
-              import.meta.url
+              import.meta.url,
             ).href
           }
           alt="Flyer für die Bar am Fasnachtssamstag"
