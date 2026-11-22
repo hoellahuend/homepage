@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Termine from "./pages/Termine";
 import Verein from "./pages/Verein";
 import Datenschutz from "./pages/Datenschutz";
+import Turniere from "./pages/Turniere";
 
 export default function App() {
   const location = useLocation();
@@ -29,12 +30,13 @@ export default function App() {
           <Route path="termine" element={<Termine />} />
           <Route path="verein" element={<Verein />} />
           <Route path="datenschutz" element={<Datenschutz />} />
+          <Route path="turniere" element={<Turniere />} />
         </Routes>
       </main>
 
       <Footer
         animating={animating}
-        setAnimating={setAnimating} // sehr wichtig!
+        setAnimating={setAnimating}
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
       />

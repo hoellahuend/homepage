@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo/logo_schwarz.svg";
 import BiteSound from "../assets/sounds/bite.mp3";
@@ -13,6 +13,25 @@ export default function Header({
 }) {
   const navigate = useNavigate();
   const audioRef = useRef(null);
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      // Wenn weiter als 50px gescrollt wurde und man nach unten scrollt -> ausblenden
+      if (currentScrollY > 50 && currentScrollY > lastScrollY && !menuOpen) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [menuOpen]);
 
   const handleClick = (path) => {
     if (animating) return;
@@ -28,14 +47,18 @@ export default function Header({
       navigate(path);
       setAnimating(false);
       setMenuOpen(false);
-    }, 700); // ⬅ exakt deine duration-700
+    }, 700);
   };
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         animating ? "h-[70vh]" : "h-20"
       } bg-qui`}
+      style={{
+        // Schiebt die 80px (5rem) Leiste nach oben weg, sodass nur die Zähne unten rausschauen
+        transform: hidden && !animating ? "translateY(-80px)" : "translateY(0)",
+      }}
     >
       <audio ref={audioRef} src={BiteSound} preload="auto" />
 
@@ -139,7 +162,7 @@ export default function Header({
 
       {/* Zähne Mobile */}
       <div
-        className="absolute left-0 w-full md:hidden z-40 transition-all duration-700"
+        className="absolute left-0 w-full md:hidden z-40 transition-all duration-700 pointer-events-none"
         style={{ bottom: animating ? "-30px" : "-70px", height: "80px" }}
       >
         <img
@@ -151,7 +174,7 @@ export default function Header({
 
       {/* Zähne Desktop */}
       <div
-        className="absolute left-0 w-full hidden md:flex z-40 transition-all duration-700"
+        className="absolute left-0 w-full hidden md:flex z-40 transition-all duration-700 pointer-events-none"
         style={{ bottom: "-160px", height: "200px" }}
       >
         <img

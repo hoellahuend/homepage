@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ZaehneUnten from "../assets/bilder/ZaehneUnten.png";
 import ZaehneGross from "../assets/bilder/ZaehneUntenGross.png";
@@ -9,23 +10,51 @@ export default function Footer({
   setAnimating,
 }) {
   const navigate = useNavigate();
+  const [hidden, setHidden] = useState(false);
 
-  const handleClick = (page, path) => {
-    onNavigate(page); // Animation bleibt
-    navigate(path); // URL wird geändert
-  };
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      // Prüfen, ob wir ganz unten auf der Seite angekommen sind
+      const isAtBottom =
+        window.innerHeight + currentScrollY >=
+        document.documentElement.scrollHeight - 20;
+
+      // Beim Runterscrollen wegfahren, außer wir sind ganz unten oder scrollen hoch
+      if (
+        currentScrollY > 50 &&
+        currentScrollY > lastScrollY &&
+        !isAtBottom &&
+        !menuOpen
+      ) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [menuOpen]);
 
   return (
     <div
-      className={`fixed bottom-0 left-0 w-full z-50 transition-all duration-700`}
-      style={{ height: animating ? "70vh" : "4rem" }}
+      className="fixed bottom-0 left-0 w-full z-50 transition-all duration-500"
+      style={{
+        height: animating ? "70vh" : "4rem",
+        // Schiebt die 4rem (64px) Footer-Leiste nach unten weg, nur die Zähne bleiben oben sichtbar
+        transform: hidden && !animating ? "translateY(4rem)" : "translateY(0)",
+      }}
     >
       {/* Hintergrund Footer */}
       <div className="absolute inset-0 bg-qui z-0"></div>
 
       {/* Footer Zähne Desktop */}
       <div
-        className="absolute left-0 w-full hidden md:flex z-20"
+        className="absolute left-0 w-full hidden md:flex z-20 pointer-events-none"
         style={{ height: "200px", overflow: "visible" }}
       >
         <img
@@ -33,16 +62,14 @@ export default function Footer({
           alt="Zähne Desktop"
           className="w-full h-full object-fill transition-transform duration-700"
           style={{
-            transform: animating
-              ? "translateY(-180px)" // nach oben, wenn animiert
-              : "translateY(-180px)", // Startposition über dem Footer
+            transform: "translateY(-180px)",
           }}
         />
       </div>
 
       {/* Footer Zähne Mobile */}
       <div
-        className="absolute left-0 w-full md:hidden z-20"
+        className="absolute left-0 w-full md:hidden z-20 pointer-events-none"
         style={{ height: "80px", overflow: "visible" }}
       >
         <img
@@ -50,7 +77,7 @@ export default function Footer({
           alt="Zähne"
           className="w-full h-full object-fill transition-transform duration-700"
           style={{
-            transform: animating ? "translateY(-70px)" : "translateY(-70px)",
+            transform: "translateY(-70px)",
           }}
         />
       </div>
@@ -60,11 +87,10 @@ export default function Footer({
         {/* Mobile Footer Content */}
         {menuOpen && (
           <div className="md:hidden fixed bottom-0 left-0 w-full bg-qui text-qua flex flex-col items-center justify-center py-4 gap-2 z-50">
-            {/* Mobile */}
             <button
               onClick={() => {
                 navigate("/datenschutz");
-                setMenuOpen(false); // Menü schließen auf Mobile
+                setMenuOpen(false);
               }}
               className="hover:text-sec transition-opacity"
             >
@@ -98,7 +124,7 @@ export default function Footer({
           <button
             onClick={() => {
               navigate("/datenschutz");
-              setMenuOpen(false); // Menü schließen auf Mobile
+              setMenuOpen(false);
             }}
             className="opacity-80 hover:text-sec transition-opacity"
           >
